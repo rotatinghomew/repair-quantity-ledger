@@ -1,0 +1,111 @@
+{
+  "scenario_partial_revision_and_withdrawal": {
+    "contract_items": [
+      {"id": "甲-墙面-一期", "subcontractor": "甲分包", "work_item": "墙面", "start_m": 0, "end_m": 10, "price_per_m": 800, "effective_from": "2026-08-01", "approval": "approved"},
+      {"id": "乙-墙面-一期", "subcontractor": "乙分包", "work_item": "墙面", "start_m": 10, "end_m": 20, "price_per_m": 900, "effective_from": "2026-08-01", "approval": "approved"}
+    ],
+    "measurements": [
+      {"id": "W1", "version": 1, "surveyed_at": "2026-09-20", "mode": "full", "segments": [{"start_m": 0, "end_m": 20, "length_m": 20}]},
+      {"id": "W2", "version": 2, "surveyed_at": "2026-10-18", "mode": "partial", "segments": [{"start_m": 10, "end_m": 14, "length_m": 4}]},
+      {"id": "W3", "version": 3, "surveyed_at": "2026-11-05", "mode": "withdraw", "withdraws_cert": "C-撤", "segments": []}
+    ],
+    "reports": [
+      {"id": "RP-1", "item": "甲-墙面-一期", "work_item": "墙面", "unit": "m", "start_m": 0, "end_m": 12, "quantity": 12, "reported_at": "2026-09-18", "certified_by": ["C-甲"]},
+      {"id": "RP-2", "item": "乙-墙面-一期", "work_item": "墙面", "unit": "m", "start_m": 12, "end_m": 18, "quantity": 6, "reported_at": "2026-09-18", "certified_by": ["C-撤"]}
+    ],
+    "certifications": [
+      {"id": "C-甲", "measurement": "W1", "report": "RP-1", "item": "甲-墙面-一期", "signed_m": 10, "period": "2026-10", "signed_at": "2026-10-02"},
+      {"id": "C-撤", "measurement": "W1", "report": "RP-2", "item": "乙-墙面-一期", "signed_m": 4, "period": "2026-10", "signed_at": "2026-10-02"}
+    ],
+    "locked_payment": [
+      {"period": "2026-10", "item": "甲-墙面-一期", "m": 10, "price_per_m": 800, "amount": 8000, "certifications": ["C-甲"]},
+      {"period": "2026-10", "item": "乙-墙面-一期", "m": 4, "price_per_m": 900, "amount": 3600, "certifications": ["C-撤"]}
+    ],
+    "approvals": [],
+    "corrections": []
+  },
+  "scenario_overlap_dispute_with_independent_pass": {
+    "contract_items": [
+      {"id": "甲-管线-一期", "subcontractor": "甲分包", "work_item": "管线", "start_m": 0, "end_m": 8, "price_per_m": 500, "effective_from": "2026-08-01", "approval": "approved"},
+      {"id": "乙-管线-一期", "subcontractor": "乙分包", "work_item": "管线", "start_m": 6, "end_m": 14, "price_per_m": 520, "effective_from": "2026-08-01", "approval": "approved"}
+    ],
+    "measurements": [
+      {"id": "G1", "version": 1, "surveyed_at": "2026-09-25", "mode": "full", "segments": [{"start_m": 0, "end_m": 14, "length_m": 14}]}
+    ],
+    "reports": [
+      {"id": "RP-G1", "item": "甲-管线-一期", "work_item": "管线", "unit": "m", "start_m": 0, "end_m": 8, "quantity": 8, "reported_at": "2026-09-24", "certified_by": ["C-G甲"]},
+      {"id": "RP-G2", "item": "乙-管线-一期", "work_item": "管线", "unit": "m", "start_m": 6, "end_m": 14, "quantity": 8, "reported_at": "2026-09-24", "certified_by": ["C-G乙"]}
+    ],
+    "certifications": [
+      {"id": "C-G甲", "measurement": "G1", "report": "RP-G1", "item": "甲-管线-一期", "signed_m": 8, "period": "2026-10", "signed_at": "2026-10-03"},
+      {"id": "C-G乙", "measurement": "G1", "report": "RP-G2", "item": "乙-管线-一期", "signed_m": 8, "period": "2026-10", "signed_at": "2026-10-03"}
+    ],
+    "locked_payment": [],
+    "approvals": [],
+    "corrections": []
+  },
+  "scenario_different_work_items_separately_measurable": {
+    "contract_items": [
+      {"id": "甲-防水-一期", "subcontractor": "甲分包", "work_item": "防水", "start_m": 0, "end_m": 10, "price_per_m": 700, "effective_from": "2026-08-01", "approval": "approved"},
+      {"id": "甲-保温-一期", "subcontractor": "甲分包", "work_item": "保温", "start_m": 0, "end_m": 10, "price_per_m": 600, "effective_from": "2026-08-01", "approval": "approved"}
+    ],
+    "measurements": [
+      {"id": "D1", "version": 1, "surveyed_at": "2026-09-22", "mode": "full", "segments": [{"start_m": 0, "end_m": 10, "length_m": 10}]}
+    ],
+    "reports": [
+      {"id": "RP-D1", "item": "甲-防水-一期", "work_item": "防水", "unit": "m", "start_m": 0, "end_m": 10, "quantity": 10, "reported_at": "2026-09-21", "certified_by": ["C-防水"]},
+      {"id": "RP-D2", "item": "甲-保温-一期", "work_item": "保温", "unit": "m", "start_m": 0, "end_m": 10, "quantity": 10, "reported_at": "2026-09-21", "certified_by": ["C-保温"]}
+    ],
+    "certifications": [
+      {"id": "C-防水", "measurement": "D1", "report": "RP-D1", "item": "甲-防水-一期", "signed_m": 10, "period": "2026-10", "signed_at": "2026-10-04"},
+      {"id": "C-保温", "measurement": "D1", "report": "RP-D2", "item": "甲-保温-一期", "signed_m": 10, "period": "2026-10", "signed_at": "2026-10-04"}
+    ],
+    "locked_payment": [],
+    "approvals": [],
+    "corrections": []
+  },
+  "scenario_pending_change_later_approved": {
+    "contract_items": [
+      {"id": "甲-屋脊-一期", "subcontractor": "甲分包", "work_item": "屋脊", "start_m": 0, "end_m": 5, "price_per_m": 1200, "effective_from": "2026-08-01", "approval": "approved"},
+      {"id": "乙-屋脊-一期", "subcontractor": "乙分包", "work_item": "屋脊", "start_m": 5, "end_m": 10, "price_per_m": 1500, "effective_from": "2026-08-01", "approval": "approved"},
+      {"id": "乙-屋脊-二期变更", "subcontractor": "乙分包", "work_item": "屋脊", "start_m": 4, "end_m": 10, "price_per_m": 1680, "effective_from": "2026-11-20", "approval": "pending", "replaces": "乙-屋脊-一期"}
+    ],
+    "measurements": [
+      {"id": "V1", "version": 1, "surveyed_at": "2026-09-30", "mode": "full", "segments": [{"start_m": 0, "end_m": 6, "length_m": 6}]},
+      {"id": "V2", "version": 2, "surveyed_at": "2026-11-12", "mode": "full", "supersedes": "V1", "segments": [{"start_m": 0, "end_m": 4, "length_m": 4}, {"start_m": 4, "end_m": 10, "length_m": 6}]}
+    ],
+    "reports": [
+      {"id": "R-81", "item": "甲-屋脊-一期", "work_item": "屋脊", "unit": "m", "start_m": 0, "end_m": 6, "quantity": 6, "reported_at": "2026-09-28", "certified_by": ["CERT-81"]}
+    ],
+    "certifications": [
+      {"id": "CERT-81", "measurement": "V1", "report": "R-81", "item": "甲-屋脊-一期", "signed_m": 5, "period": "2026-10", "signed_at": "2026-10-08"}
+    ],
+    "locked_payment": [
+      {"period": "2026-10", "item": "甲-屋脊-一期", "m": 5, "price_per_m": 1200, "amount": 6000, "certifications": ["CERT-81"]}
+    ],
+    "approvals": [
+      {"item": "乙-屋脊-二期变更", "approved_at": "2026-11-25", "replaces": "乙-屋脊-一期"}
+    ],
+    "corrections": []
+  },
+  "scenario_effective_date_vs_signing_date": {
+    "contract_items": [
+      {"id": "丙-地坪-旧价", "subcontractor": "丙分包", "work_item": "地坪", "start_m": 0, "end_m": 10, "price_per_m": 300, "effective_from": "2026-08-01", "approval": "approved"},
+      {"id": "丙-地坪-新价", "subcontractor": "丙分包", "work_item": "地坪", "start_m": 0, "end_m": 10, "price_per_m": 330, "effective_from": "2026-11-01", "approval": "approved", "replaces": "丙-地坪-旧价"}
+    ],
+    "measurements": [
+      {"id": "F1", "version": 1, "surveyed_at": "2026-10-20", "mode": "full", "segments": [{"start_m": 0, "end_m": 10, "length_m": 10}]}
+    ],
+    "reports": [
+      {"id": "RP-F1", "item": "丙-地坪-旧价", "work_item": "地坪", "unit": "m", "start_m": 0, "end_m": 6, "quantity": 6, "reported_at": "2026-10-19", "certified_by": ["C-旧"]},
+      {"id": "RP-F2", "item": "丙-地坪-新价", "work_item": "地坪", "unit": "m", "start_m": 0, "end_m": 4, "quantity": 4, "reported_at": "2026-11-02", "certified_by": ["C-新"]}
+    ],
+    "certifications": [
+      {"id": "C-旧", "measurement": "F1", "report": "RP-F1", "item": "丙-地坪-旧价", "signed_m": 6, "period": "2026-10", "signed_at": "2026-10-25"},
+      {"id": "C-新", "measurement": "F1", "report": "RP-F2", "item": "丙-地坪-新价", "signed_m": 4, "period": "2026-11", "signed_at": "2026-11-08"}
+    ],
+    "locked_payment": [],
+    "approvals": [],
+    "corrections": []
+  }
+}
