@@ -1,0 +1,17 @@
+{
+  "contract_items": [
+    {"id": "甲-屋脊-一期", "start_m": 0, "end_m": 5, "price_per_m": 1200, "effective_from": "2026-08-01", "approval": "approved"},
+    {"id": "乙-屋脊-一期", "start_m": 5, "end_m": 10, "price_per_m": 1500, "effective_from": "2026-08-01", "approval": "approved"},
+    {"id": "乙-屋脊-二期变更", "start_m": 4, "end_m": 10, "price_per_m": 1680, "effective_from": "2026-11-20", "approval": "pending"}
+  ],
+  "measurements": [
+    {"id": "V1", "version": 1, "surveyed_at": "2026-09-30", "segments": [{"start_m": 0, "end_m": 6, "length_m": 6}]},
+    {"id": "V2", "version": 2, "surveyed_at": "2026-11-12", "supersedes": "V1", "segments": [{"start_m": 0, "end_m": 4, "length_m": 4}, {"start_m": 4, "end_m": 10, "length_m": 6}]}
+  ],
+  "certifications": [
+    {"id": "CERT-81", "measurement": "V1", "item": "甲-屋脊-一期", "signed_m": 5, "period": "2026-10"},
+    {"id": "CERT-82", "measurement": "V1", "item": "乙-屋脊-一期", "signed_m": 1, "period": "2026-10"}
+  ],
+  "locked_payment": [{"period": "2026-10", "item": "甲-屋脊-一期", "m": 5, "amount": 6000}, {"period": "2026-10", "item": "乙-屋脊-一期", "m": 1, "amount": 1500}],
+  "corrections": [{"measurement": "V2", "applies_to": "periods_not_locked_before_2026-11", "pending_change_m": -1, "pending_change_amount": -1200, "pending_add_m": 1, "pending_add_amount": 1680}]
+}
